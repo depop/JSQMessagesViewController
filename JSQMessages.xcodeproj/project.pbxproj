@@ -56,7 +56,7 @@
 		3A605F8B22E5D063002529D5 /* JSQMessagesBubbleImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A605F2B22E5D063002529D5 /* JSQMessagesBubbleImageFactory.m */; };
 		3A605F8C22E5D063002529D5 /* JSQMessagesAvatarImageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F2C22E5D063002529D5 /* JSQMessagesAvatarImageFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A605F8D22E5D063002529D5 /* JSQMessagesTimestampFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F2D22E5D063002529D5 /* JSQMessagesTimestampFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A605F8E22E5D063002529D5 /* JSQMessagesVideoThumbnailFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F2E22E5D063002529D5 /* JSQMessagesVideoThumbnailFactory.h */; };
+		3A605F8E22E5D063002529D5 /* JSQMessagesVideoThumbnailFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F2E22E5D063002529D5 /* JSQMessagesVideoThumbnailFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A605F8F22E5D063002529D5 /* JSQMessagesMediaViewBubbleImageMasker.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F2F22E5D063002529D5 /* JSQMessagesMediaViewBubbleImageMasker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A605F9022E5D063002529D5 /* JSQMessagesAvatarImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A605F3022E5D063002529D5 /* JSQMessagesAvatarImageFactory.m */; };
 		3A605F9122E5D063002529D5 /* JSQMessagesBubbleImageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F3122E5D063002529D5 /* JSQMessagesBubbleImageFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,7 +101,7 @@
 		3A605FB822E5D063002529D5 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A605F5B22E5D063002529D5 /* JSQMessagesLoadEarlierHeaderView.xib */; };
 		3A605FB922E5D063002529D5 /* JSQMessagesCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F5C22E5D063002529D5 /* JSQMessagesCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A605FBA22E5D063002529D5 /* JSQMessagesCellTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F5D22E5D063002529D5 /* JSQMessagesCellTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A605FBB22E5D063002529D5 /* JSQMessagesTypingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F5E22E5D063002529D5 /* JSQMessagesTypingView.h */; };
+		3A605FBB22E5D063002529D5 /* JSQMessagesTypingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F5E22E5D063002529D5 /* JSQMessagesTypingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A605FBC22E5D063002529D5 /* JSQMessagesCollectionViewCellOutgoing.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F5F22E5D063002529D5 /* JSQMessagesCollectionViewCellOutgoing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A605FBD22E5D063002529D5 /* JSQMessagesCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F6022E5D063002529D5 /* JSQMessagesCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A605FBE22E5D063002529D5 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A605F6122E5D063002529D5 /* JSQMessagesCollectionViewCellOutgoing.xib */; };
@@ -110,7 +110,7 @@
 		3A605FC122E5D063002529D5 /* JSQMessagesCollectionViewCellIncoming.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A605F6422E5D063002529D5 /* JSQMessagesCollectionViewCellIncoming.m */; };
 		3A605FC222E5D063002529D5 /* JSQMessagesTypingIndicatorFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A605F6522E5D063002529D5 /* JSQMessagesTypingIndicatorFooterView.m */; };
 		3A605FC322E5D063002529D5 /* JSQMessagesToolbarContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F6622E5D063002529D5 /* JSQMessagesToolbarContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A605FC422E5D063002529D5 /* JSQMessagesMediaPlaceholderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F6722E5D063002529D5 /* JSQMessagesMediaPlaceholderView.h */; };
+		3A605FC422E5D063002529D5 /* JSQMessagesMediaPlaceholderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F6722E5D063002529D5 /* JSQMessagesMediaPlaceholderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A605FC522E5D063002529D5 /* JSQMessagesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A605F6822E5D063002529D5 /* JSQMessagesLabel.m */; };
 		3A605FC622E5D063002529D5 /* JSQMessagesLoadEarlierHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A605F6922E5D063002529D5 /* JSQMessagesLoadEarlierHeaderView.m */; };
 		3A605FC722E5D063002529D5 /* JSQMessagesComposerTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A605F6A22E5D063002529D5 /* JSQMessagesComposerTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -621,7 +621,6 @@
 				3A605F8322E5D063002529D5 /* JSQMessagesCollectionViewFlowLayout.h in Headers */,
 				3A605F8522E5D063002529D5 /* JSQAudioMediaViewAttributes.h in Headers */,
 				3A605F7F22E5D063002529D5 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.h in Headers */,
-				3A605FC422E5D063002529D5 /* JSQMessagesMediaPlaceholderView.h in Headers */,
 				3A605FA022E5D063002529D5 /* JSQMediaItem.h in Headers */,
 				3A605F8622E5D063002529D5 /* JSQMessagesBubblesSizeCalculator.h in Headers */,
 				3A605F9922E5D063002529D5 /* JSQMessage.h in Headers */,
@@ -647,16 +646,17 @@
 				3A605FD622E5D063002529D5 /* UIColor+JSQMessages.h in Headers */,
 				3A605FA122E5D063002529D5 /* JSQMessageMediaData.h in Headers */,
 				3A605F8822E5D063002529D5 /* JSQMessagesBubbleSizeCalculating.h in Headers */,
-				3A605FBB22E5D063002529D5 /* JSQMessagesTypingView.h in Headers */,
 				3A605FD722E5D063002529D5 /* UIImage+JSQMessages.h in Headers */,
 				3A605FA222E5D063002529D5 /* JSQMessageData.h in Headers */,
 				3A605F9722E5D063002529D5 /* JSQMessagesBubbleImage.h in Headers */,
 				3A605FB722E5D063002529D5 /* JSQMessagesCollectionViewCellIncoming.h in Headers */,
-				3A605F8E22E5D063002529D5 /* JSQMessagesVideoThumbnailFactory.h in Headers */,
+				3A605FC422E5D063002529D5 /* JSQMessagesMediaPlaceholderView.h in Headers */,
 				3A605FA822E5D063002529D5 /* JSQMessagesAvatarImage.h in Headers */,
 				3A605FB922E5D063002529D5 /* JSQMessagesCollectionViewCell.h in Headers */,
 				3A605FAC22E5D063002529D5 /* JSQMessageAvatarImageDataSource.h in Headers */,
+				3A605FBB22E5D063002529D5 /* JSQMessagesTypingView.h in Headers */,
 				3A605FBA22E5D063002529D5 /* JSQMessagesCellTextView.h in Headers */,
+				3A605F8E22E5D063002529D5 /* JSQMessagesVideoThumbnailFactory.h in Headers */,
 				3A605F9C22E5D063002529D5 /* JSQPhotoMediaItem.h in Headers */,
 				3A605F9A22E5D063002529D5 /* JSQMessagesCollectionViewDelegateFlowLayout.h in Headers */,
 			);

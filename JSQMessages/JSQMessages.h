@@ -82,3 +82,7 @@ FOUNDATION_EXPORT const unsigned char JSQMessagesVersionString[];
 #import <JSQMessages/UIImage+JSQMessages.h>
 #import <JSQMessages/UIView+JSQMessages.h>
 #import <JSQMessages/NSBundle+JSQMessages.h>
+
+#import <JSQMessages/JSQMessagesVideoThumbnailFactory.h>
+#import <JSQMessages/JSQMessagesTypingView.h>
+#import <JSQMessages/JSQMessagesMediaPlaceholderView.h>

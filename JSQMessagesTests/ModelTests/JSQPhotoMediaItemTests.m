@@ -21,6 +21,10 @@
 
 @implementation JSQPhotoMediaItemTests
 
+- (UIImage *)newDemoImage {
+    return [UIImage imageNamed:@"test_demo_image" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+}
+
 - (void)setUp
 {
     [super setUp];
@@ -33,13 +37,13 @@
 
 - (void)testPhotoItemInit
 {
-    JSQPhotoMediaItem *item = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage new]];
+    JSQPhotoMediaItem *item = [[JSQPhotoMediaItem alloc] initWithImage:[self newDemoImage]];
     XCTAssertNotNil(item);
 }
 
 - (void)testPhotoItemIsEqual
 {
-    JSQPhotoMediaItem *item = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"demo_avatar_jobs"]];
+    JSQPhotoMediaItem *item = [[JSQPhotoMediaItem alloc] initWithImage:[self newDemoImage]];
     
     JSQPhotoMediaItem *copy = [item copy];
     
@@ -52,7 +56,7 @@
 
 - (void)testPhotoItemArchiving
 {
-    JSQPhotoMediaItem *item = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage new]];
+    JSQPhotoMediaItem *item = [[JSQPhotoMediaItem alloc] initWithImage:[self newDemoImage]];
     
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:item];
     
@@ -69,13 +73,13 @@
     XCTAssertNotNil([item mediaPlaceholderView]);
     XCTAssertNil([item mediaView], @"Media view should be nil if image is nil");
     
-    item.image = [UIImage imageNamed:@"demo_avatar_jobs"];
+    item.image = [self newDemoImage];
     
     XCTAssertNotNil([item mediaView], @"Media view should NOT be nil once item has media data");
 }
 
 - (void)testCopyableItemInMediaProtocol {
-    JSQPhotoMediaItem *item = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"demo_avatar_jobs"]];
+    JSQPhotoMediaItem *item = [[JSQPhotoMediaItem alloc] initWithImage:[self newDemoImage]];
     XCTAssertNotNil(item);
     XCTAssertEqual([item mediaDataType], (NSString *)kUTTypeJPEG);
     

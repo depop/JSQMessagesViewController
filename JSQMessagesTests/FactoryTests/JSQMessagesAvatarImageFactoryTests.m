@@ -23,6 +23,10 @@
 
 @implementation JSQMessagesAvatarImageFactoryTests
 
+- (UIImage *)newDemoImage {
+    return [UIImage imageNamed:@"test_demo_image" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+}
+
 - (void)setUp
 {
     [super setUp];
@@ -43,7 +47,7 @@
 
 - (void)testAvatarImage
 {
-    UIImage *image = [UIImage imageNamed:@"demo_avatar_jobs"];
+    UIImage *image = [self newDemoImage];
     XCTAssertNotNil(image, @"Image should not be nil");
     
     JSQMessagesAvatarImage *avatar = [self.factory avatarImageWithPlaceholder:image];

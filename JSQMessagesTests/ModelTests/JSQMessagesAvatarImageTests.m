@@ -20,9 +20,13 @@
 
 @implementation JSQMessagesAvatarImageTests
 
+- (UIImage *)newDemoImage {
+    return [UIImage imageNamed:@"test_demo_image" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+}
+
 - (void)testInitValid
 {
-    UIImage *mockImage = [UIImage imageNamed:@"demo_avatar_jobs"];
+    UIImage *mockImage = [self newDemoImage];
     JSQMessagesAvatarImage *avatar = [JSQMessagesAvatarImage avatarImageWithPlaceholder:mockImage];
     XCTAssertNotNil(avatar, @"Valid init should succeed");
     
@@ -35,7 +39,7 @@
 
 - (void)testCopy
 {
-    UIImage *mockImage = [UIImage imageNamed:@"demo_avatar_jobs"];
+    UIImage *mockImage = [self newDemoImage];
     JSQMessagesAvatarImage *avatar = [[JSQMessagesAvatarImage alloc] initWithAvatarImage:mockImage
                                                                         highlightedImage:mockImage
                                                                         placeholderImage:mockImage];

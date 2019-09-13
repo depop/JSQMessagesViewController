@@ -51,13 +51,18 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
     self.sendButtonLocation = JSQMessagesInputSendButtonLocationRight;
     self.enablesSendButtonAutomatically = YES;
 
-    self.preferredDefaultHeight = 44.0f;
+    self.preferredDefaultHeight = 64.0f;
     self.maximumHeight = NSNotFound;
 
     JSQMessagesToolbarContentView *toolbarContentView = [self loadToolbarContentView];
     toolbarContentView.frame = self.frame;
     [self addSubview:toolbarContentView];
-    [self jsq_pinAllEdgesOfSubview:toolbarContentView];
+    [NSLayoutConstraint activateConstraints:@[
+                                              [toolbarContentView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
+                                              [toolbarContentView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
+                                              [toolbarContentView.topAnchor constraintEqualToAnchor:self.topAnchor],
+                                              [toolbarContentView.bottomAnchor constraintEqualToAnchor:self.layoutMarginsGuide.bottomAnchor],
+                                              ]];
     [self setNeedsUpdateConstraints];
     _contentView = toolbarContentView;
 

@@ -100,16 +100,6 @@ typedef NS_ENUM(NSUInteger, JSQMessagesInputSendButtonLocation) {
 @property (assign, nonatomic) BOOL enablesSendButtonAutomatically;
 
 /**
- *  Specifies the default (minimum) height for the toolbar. The default value is `44.0f`. This value must be positive.
- */
-@property (assign, nonatomic) CGFloat preferredDefaultHeight;
-
-/**
- *  Specifies the maximum height for the toolbar. The default value is `NSNotFound`, which specifies no maximum height.
- */
-@property (assign, nonatomic) NSUInteger maximumHeight;
-
-/**
  *  Loads the content view for the toolbar.
  *
  *  @discussion Override this method to provide a custom content view for the toolbar.

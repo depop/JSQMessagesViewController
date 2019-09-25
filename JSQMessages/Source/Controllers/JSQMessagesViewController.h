@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Returns the collection view object managed by this view controller.
  *  This view controller is the collection view's data source and delegate.
  */
-@property (weak, nonatomic, readonly, nullable) JSQMessagesCollectionView *collectionView;
+@property (strong, nonatomic, readonly, nullable) JSQMessagesCollectionView *collectionView;
 
 /**
  *  Returns the input toolbar view object managed by this view controller.
@@ -152,28 +152,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @discussion Use this property to adjust the insets to account for a custom subview in your view controller.
  */
 @property (assign, nonatomic) UIEdgeInsets additionalContentInset;
-
-#pragma mark - Class methods
-
-/**
- *  Returns the `UINib` object initialized for a `JSQMessagesViewController`.
- *
- *  @return The initialized `UINib` object.
- *
- *  @discussion You may override this method to provide a customized nib. If you do,
- *  you should also override `messagesViewController` to return your
- *  view controller loaded from your custom nib.
- */
-+ (UINib *)nib;
-
-/**
- *  Creates and returns a new `JSQMessagesViewController` object.
- *
- *  @discussion This is the designated initializer for programmatic instantiation.
- *
- *  @return An initialized `JSQMessagesViewController` object.
- */
-+ (instancetype)messagesViewController;
 
 #pragma mark - Messages view controller
 

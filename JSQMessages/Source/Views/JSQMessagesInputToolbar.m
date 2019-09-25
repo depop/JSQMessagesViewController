@@ -43,41 +43,43 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
 
 #pragma mark - Initialization
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    self.backgroundColor = [UIColor whiteColor];
-    self.jsq_isObserving = NO;
-    self.sendButtonLocation = JSQMessagesInputSendButtonLocationRight;
-    self.enablesSendButtonAutomatically = YES;
+- (instancetype)init {
+    self = [super init];// initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 64.0f)];
+    if (self) {
+        self.backgroundColor = [UIColor whiteColor];
+        self.jsq_isObserving = NO;
+        self.sendButtonLocation = JSQMessagesInputSendButtonLocationRight;
+        self.enablesSendButtonAutomatically = YES;
+        self.frame = CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 64.0f);
+//        self.insetsLayoutMarginsFromSafeArea = NO;
+        self.translatesAutoresizingMaskIntoConstraints = NO;
 
-    self.preferredDefaultHeight = 64.0f;
-    self.maximumHeight = NSNotFound;
+        JSQMessagesToolbarContentView *toolbarContentView = [self loadToolbarContentView];
+        toolbarContentView.frame = self.frame;
+        [self addSubview:toolbarContentView];
+        [NSLayoutConstraint activateConstraints:@[
+            [toolbarContentView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
+            [toolbarContentView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
+            [toolbarContentView.topAnchor constraintEqualToAnchor:self.topAnchor],
+            [toolbarContentView.bottomAnchor constraintEqualToAnchor:self.layoutMarginsGuide.bottomAnchor],
+        ]];
+        [self setNeedsUpdateConstraints];
+        _contentView = toolbarContentView;
 
-    JSQMessagesToolbarContentView *toolbarContentView = [self loadToolbarContentView];
-    toolbarContentView.frame = self.frame;
-    [self addSubview:toolbarContentView];
-    [NSLayoutConstraint activateConstraints:@[
-                                              [toolbarContentView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
-                                              [toolbarContentView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
-                                              [toolbarContentView.topAnchor constraintEqualToAnchor:self.topAnchor],
-                                              [toolbarContentView.bottomAnchor constraintEqualToAnchor:self.layoutMarginsGuide.bottomAnchor],
-                                              ]];
-    [self setNeedsUpdateConstraints];
-    _contentView = toolbarContentView;
+        [self jsq_addObservers];
 
-    [self jsq_addObservers];
+        JSQMessagesToolbarButtonFactory *toolbarButtonFactory = [[JSQMessagesToolbarButtonFactory alloc] initWithFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
+        self.contentView.leftBarButtonItem = [toolbarButtonFactory defaultAccessoryButtonItem];
+        self.contentView.rightBarButtonItem = [toolbarButtonFactory defaultSendButtonItem];
 
-    JSQMessagesToolbarButtonFactory *toolbarButtonFactory = [[JSQMessagesToolbarButtonFactory alloc] initWithFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
-    self.contentView.leftBarButtonItem = [toolbarButtonFactory defaultAccessoryButtonItem];
-    self.contentView.rightBarButtonItem = [toolbarButtonFactory defaultSendButtonItem];
+        [self updateSendButtonEnabledState];
 
-    [self updateSendButtonEnabledState];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(textViewTextDidChangeNotification:)
-                                                 name:UITextViewTextDidChangeNotification
-                                               object:_contentView.textView];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(textViewTextDidChangeNotification:)
+                                                     name:UITextViewTextDidChangeNotification
+                                                   object:_contentView.textView];
+    }
+    return self;
 }
 
 - (JSQMessagesToolbarContentView *)loadToolbarContentView
@@ -95,12 +97,6 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
 }
 
 #pragma mark - Setters
-
-- (void)setPreferredDefaultHeight:(CGFloat)preferredDefaultHeight
-{
-    NSParameterAssert(preferredDefaultHeight > 0.0f);
-    _preferredDefaultHeight = preferredDefaultHeight;
-}
 
 - (void)setEnablesSendButtonAutomatically:(BOOL)enablesSendButtonAutomatically
 {
@@ -220,11 +216,16 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
     _jsq_isObserving = NO;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self bringSubviewToFront:self.contentView];
+}
+
 - (void) didMoveToWindow {
     [super didMoveToWindow];
     if (@available(iOS 11.0, *)) {
         if (self.window != nil) {
-            [[self bottomAnchor] constraintLessThanOrEqualToSystemSpacingBelowAnchor:self.window.safeAreaLayoutGuide.bottomAnchor multiplier:1.0].active = YES;
+            [self.bottomAnchor constraintLessThanOrEqualToSystemSpacingBelowAnchor:self.window.safeAreaLayoutGuide.bottomAnchor multiplier:1.0].active = YES;
         }
     }
 }

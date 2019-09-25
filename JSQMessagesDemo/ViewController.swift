@@ -11,9 +11,17 @@ import JSQMessages
 
 class ViewController: UIViewController {
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    @IBAction func tapPush() {
         let vc = JSQMessagesViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction func tapPresent() {
+        let vc = JSQMessagesViewController()
+        present(vc, animated: true, completion: nil)
+    }
+    @IBAction func tapPresentFullScreen() {
+        let vc = JSQMessagesViewController()
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
 }

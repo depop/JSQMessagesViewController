@@ -41,30 +41,4 @@
     XCTAssertEqual(toolbar.sendButtonLocation, JSQMessagesInputSendButtonLocationRight, @"Property should be equal to default value");
 }
 
-// TODO: investigate this later
-- (void)disabled_testSetMaximumHeight
-{
-    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    XCTAssertNotNil(mainSB, @"Storyboard should not be nil");
-
-    JSQMessagesViewController *demoVC = [mainSB instantiateViewControllerWithIdentifier:@"DemoVC"];
-    [demoVC beginAppearanceTransition:YES animated:NO];
-    [demoVC endAppearanceTransition];
-
-    XCTAssertEqual(demoVC.inputToolbar.maximumHeight, NSNotFound, @"maximumInputToolbarHeight should equal default value");
-
-    demoVC.inputToolbar.maximumHeight = 54;
-
-    CGRect newBounds = demoVC.inputToolbar.bounds;
-    newBounds.size.height = 100;
-    demoVC.inputToolbar.bounds = newBounds;
-    XCTAssertEqual(CGRectGetHeight(demoVC.inputToolbar.bounds), 100);
-
-    [demoVC.view setNeedsUpdateConstraints];
-    [demoVC.view setNeedsLayout];
-    [demoVC.view layoutIfNeeded];
-
-    XCTAssertLessThanOrEqual(CGRectGetHeight(demoVC.inputToolbar.frame), 54, @"Toolbar height should be <= to maximumInputToolbarHeight");
-}
-
 @end

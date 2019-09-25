@@ -58,7 +58,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The collection view object currently using this layout object.
  */
-@property (readonly, nonatomic) JSQMessagesCollectionView *messagesCollectionView;
+
+// TODO: fix, rename "messagesCollectionView", see #920
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-property-type"
+@property (readonly, nonatomic) JSQMessagesCollectionView *collectionView;
+#pragma clang diagnostic pop
 
 /**
  *  The object that the layout uses to calculate bubble sizes.

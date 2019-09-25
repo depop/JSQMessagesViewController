@@ -199,7 +199,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
 
 - (CGFloat)itemWidth
 {
-    return CGRectGetWidth(self.messagesCollectionView.frame) - self.sectionInset.left - self.sectionInset.right;
+    return CGRectGetWidth(self.collectionView.frame) - self.sectionInset.left - self.sectionInset.right;
 }
 
 - (UIDynamicAnimator *)dynamicAnimator
@@ -268,7 +268,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     if (self.springinessEnabled) {
         //  pad rect to avoid flickering
         CGFloat padding = -100.0f;
-        CGRect visibleRect = CGRectInset(self.messagesCollectionView.bounds, padding, padding);
+        CGRect visibleRect = CGRectInset(self.collectionView.bounds, padding, padding);
         
         NSArray *visibleItems = [[NSArray alloc] initWithArray:[super layoutAttributesForElementsInRect:visibleRect] copyItems:YES];
         NSSet *visibleItemsIndexPaths = [NSSet setWithArray:[visibleItems valueForKey:NSStringFromSelector(@selector(indexPath))]];
@@ -331,12 +331,12 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {
     if (self.springinessEnabled) {
-        UIScrollView *scrollView = self.messagesCollectionView;
+        UIScrollView *scrollView = self.collectionView;
         CGFloat delta = newBounds.origin.y - scrollView.bounds.origin.y;
         
         self.latestDelta = delta;
         
-        CGPoint touchLocation = [self.messagesCollectionView.panGestureRecognizer locationInView:self.messagesCollectionView];
+        CGPoint touchLocation = [self.collectionView.panGestureRecognizer locationInView:self.collectionView];
         
         [self.dynamicAnimator.behaviors enumerateObjectsUsingBlock:^(UIAttachmentBehavior *springBehaviour, NSUInteger idx, BOOL *stop) {
             [self jsq_adjustSpringBehavior:springBehaviour forTouchLocation:touchLocation];
@@ -344,7 +344,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
         }];
     }
     
-    CGRect oldBounds = self.messagesCollectionView.bounds;
+    CGRect oldBounds = self.collectionView.bounds;
     if (CGRectGetWidth(newBounds) != CGRectGetWidth(oldBounds)) {
         return YES;
     }
@@ -363,7 +363,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
                 *stop = YES;
             }
             
-            CGFloat collectionViewHeight = CGRectGetHeight(self.messagesCollectionView.bounds);
+            CGFloat collectionViewHeight = CGRectGetHeight(self.collectionView.bounds);
             
             JSQMessagesCollectionViewLayoutAttributes *attributes = [JSQMessagesCollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:updateItem.indexPathAfterUpdate];
             
@@ -404,7 +404,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
 
 - (CGSize)messageBubbleSizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    id<JSQMessageData> messageItem = [self.messagesCollectionView.dataSource collectionView:self.messagesCollectionView
+    id<JSQMessageData> messageItem = [self.collectionView.dataSource collectionView:self.collectionView
                                                       messageDataForItemAtIndexPath:indexPath];
 
     return [self.bubbleSizeCalculator messageBubbleSizeForMessageData:messageItem
@@ -443,17 +443,17 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     
     layoutAttributes.outgoingAvatarViewSize = self.outgoingAvatarViewSize;
     
-    layoutAttributes.cellTopLabelHeight = [self.messagesCollectionView.delegate collectionView:self.messagesCollectionView
-                                                                                        layout:self
-                                                              heightForCellTopLabelAtIndexPath:indexPath];
+    layoutAttributes.cellTopLabelHeight = [self.collectionView.delegate collectionView:self.collectionView
+                                                                                layout:self
+                                                      heightForCellTopLabelAtIndexPath:indexPath];
     
-    layoutAttributes.messageBubbleTopLabelHeight = [self.messagesCollectionView.delegate collectionView:self.messagesCollectionView
-                                                                                                 layout:self
-                                                              heightForMessageBubbleTopLabelAtIndexPath:indexPath];
+    layoutAttributes.messageBubbleTopLabelHeight = [self.collectionView.delegate collectionView:self.collectionView
+                                                                                         layout:self
+                                                      heightForMessageBubbleTopLabelAtIndexPath:indexPath];
     
-    layoutAttributes.cellBottomLabelHeight = [self.messagesCollectionView.delegate collectionView:self.messagesCollectionView
-                                                                                           layout:self
-                                                              heightForCellBottomLabelAtIndexPath:indexPath];
+    layoutAttributes.cellBottomLabelHeight = [self.collectionView.delegate collectionView:self.collectionView
+                                                                                   layout:self
+                                                      heightForCellBottomLabelAtIndexPath:indexPath];
 }
 
 #pragma mark - Spring behavior utilities
@@ -481,7 +481,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     
     NSArray *newlyVisibleItems = [visibleItems objectsAtIndexes:indexSet];
     
-    CGPoint touchLocation = [self.messagesCollectionView.panGestureRecognizer locationInView:self.messagesCollectionView];
+    CGPoint touchLocation = [self.collectionView.panGestureRecognizer locationInView:self.collectionView];
     
     [newlyVisibleItems enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes *item, NSUInteger index, BOOL *stop) {
         UIAttachmentBehavior *springBehaviour = [self jsq_springBehaviorWithLayoutAttributesItem:item];

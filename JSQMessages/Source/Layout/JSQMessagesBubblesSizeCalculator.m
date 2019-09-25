@@ -146,7 +146,7 @@
 {
     NSString *messageSender = [messageData senderId];
 
-    if ([messageSender isEqualToString:[layout.messagesCollectionView.dataSource senderId]]) {
+    if ([messageSender isEqualToString:[layout.collectionView.dataSource senderId]]) {
         return layout.outgoingAvatarViewSize;
     }
 

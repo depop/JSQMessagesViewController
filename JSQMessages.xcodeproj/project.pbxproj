@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AA0101725CDA65A00C13520 /* JSQMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A605F0222E5CE74002529D5 /* JSQMessages.framework */; };
+		1AA0101825CDA65A00C13520 /* JSQMessages.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A605F0222E5CE74002529D5 /* JSQMessages.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A2B9F0122E5D73D00611814 /* JSQMessagesAvatarImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2B9EDF22E5D73C00611814 /* JSQMessagesAvatarImageTests.m */; };
 		3A2B9F0222E5D73D00611814 /* JSQPhotoMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2B9EE022E5D73C00611814 /* JSQPhotoMediaItemTests.m */; };
 		3A2B9F0322E5D73D00611814 /* JSQLocationMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2B9EE122E5D73C00611814 /* JSQLocationMediaItemTests.m */; };
@@ -140,6 +142,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1AA0101925CDA65A00C13520 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A605EF922E5CE74002529D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A605F0122E5CE74002529D5;
+			remoteInfo = JSQMessages;
+		};
 		3A605F0D22E5CE74002529D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A605EF922E5CE74002529D5 /* Project object */;
@@ -155,6 +164,20 @@
 			remoteInfo = JSQMessages;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1AA0101B25CDA65A00C13520 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1AA0101825CDA65A00C13520 /* JSQMessages.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3A2B9EDF22E5D73C00611814 /* JSQMessagesAvatarImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesAvatarImageTests.m; sourceTree = "<group>"; };
@@ -314,12 +337,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA0101725CDA65A00C13520 /* JSQMessages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AA0101625CDA65A00C13520 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3A2B9EDE22E5D73C00611814 /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +429,7 @@
 				3A605F0F22E5CE74002529D5 /* JSQMessagesTests */,
 				3AD5BEB022E5D2EB008E1557 /* JSQMessagesDemo */,
 				3A605F0322E5CE74002529D5 /* Products */,
+				1AA0101625CDA65A00C13520 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -708,11 +740,13 @@
 				3AD5BEAB22E5D2EB008E1557 /* Sources */,
 				3AD5BEAC22E5D2EB008E1557 /* Frameworks */,
 				3AD5BEAD22E5D2EB008E1557 /* Resources */,
+				1AA0101B25CDA65A00C13520 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				3AD5BEC222E5D2F6008E1557 /* PBXTargetDependency */,
+				1AA0101A25CDA65A00C13520 /* PBXTargetDependency */,
 			);
 			name = JSQMessagesDemo;
 			productName = JSQMessagesDemo;
@@ -891,6 +925,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1AA0101A25CDA65A00C13520 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A605F0122E5CE74002529D5 /* JSQMessages */;
+			targetProxy = 1AA0101925CDA65A00C13520 /* PBXContainerItemProxy */;
+		};
 		3A605F0E22E5CE74002529D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3A605F0122E5CE74002529D5 /* JSQMessages */;

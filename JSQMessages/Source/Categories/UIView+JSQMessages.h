@@ -37,6 +37,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)jsq_pinAllEdgesOfSubview:(UIView *)subview;
 
+/**
+ *   Enlarging Touch Area for UIView for Accessibility purpose
+ */
+- (CGRect)touchAreaGreatThanOrEqualTo: (CGSize)minTouchArea;
+
 @end
 
 NS_ASSUME_NONNULL_END

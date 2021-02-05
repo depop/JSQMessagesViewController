@@ -22,6 +22,8 @@
 
 #import "NSString+JSQMessages.h"
 
+#import "UIView+JSQMessages.h"
+
 @interface JSQMessagesComposerTextView ()
 
 @property (nonatomic, weak) NSLayoutConstraint *heightConstraint;
@@ -75,6 +77,12 @@
     [self associateConstraints];
 
     [self jsq_addTextViewNotificationObservers];
+}
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    CGRect newTouchArea = [self touchAreaGreatThanOrEqualTo:CGSizeMake(44.0, 44.0)];
+    return CGRectContainsPoint(newTouchArea, point);
 }
 
 - (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer

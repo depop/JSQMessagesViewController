@@ -39,4 +39,21 @@
     [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTrailing];
 }
 
+/// Provide touch area that has great than or equal size as minTouchArea
+/// Useful when we need to increase hit area but do not want to change size and layout.
+- (CGRect)touchAreaGreatThanOrEqualTo: (CGSize)minTouchArea
+{
+    BOOL needVerticalChanges = self.bounds.size.height < minTouchArea.height;
+    BOOL needHorizontalChanges = self.bounds.size.width < minTouchArea.width;
+    
+    // To increase the pressure area, the vector should be negative.
+    CGFloat dY = (needVerticalChanges) ? ceil(([self bounds].size.height - minTouchArea.height)/ 2) : 0.0;
+    
+    CGFloat dX = (needHorizontalChanges) ? ceil(([self bounds].size.width - minTouchArea.width) / 2) : 0.0;
+    
+    CGRect newTouchArea = CGRectInset(self.bounds, dX, dY);
+    
+    return newTouchArea;
+}
+
 @end

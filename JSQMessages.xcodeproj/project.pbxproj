@@ -140,14 +140,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1AA0101925CDA65A00C13520 /* PBXContainerItemProxy */ = {
+		3A605F0D22E5CE74002529D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A605EF922E5CE74002529D5 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3A605F0122E5CE74002529D5;
 			remoteInfo = JSQMessages;
 		};
-		3A605F0D22E5CE74002529D5 /* PBXContainerItemProxy */ = {
+		3AD5BEC122E5D2F6008E1557 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A605EF922E5CE74002529D5 /* Project object */;
 			proxyType = 1;
@@ -320,13 +320,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1AA0101625CDA65A00C13520 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3A2B9EDE22E5D73C00611814 /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,7 +398,6 @@
 				3A605F0F22E5CE74002529D5 /* JSQMessagesTests */,
 				3AD5BEB022E5D2EB008E1557 /* JSQMessagesDemo */,
 				3A605F0322E5CE74002529D5 /* Products */,
-				1AA0101625CDA65A00C13520 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -720,7 +712,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1AA0101A25CDA65A00C13520 /* PBXTargetDependency */,
+				3AD5BEC222E5D2F6008E1557 /* PBXTargetDependency */,
 			);
 			name = JSQMessagesDemo;
 			productName = JSQMessagesDemo;
@@ -899,15 +891,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1AA0101A25CDA65A00C13520 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3A605F0122E5CE74002529D5 /* JSQMessages */;
-			targetProxy = 1AA0101925CDA65A00C13520 /* PBXContainerItemProxy */;
-		};
 		3A605F0E22E5CE74002529D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3A605F0122E5CE74002529D5 /* JSQMessages */;
 			targetProxy = 3A605F0D22E5CE74002529D5 /* PBXContainerItemProxy */;
+		};
+		3AD5BEC222E5D2F6008E1557 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A605F0122E5CE74002529D5 /* JSQMessages */;
+			targetProxy = 3AD5BEC122E5D2F6008E1557 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

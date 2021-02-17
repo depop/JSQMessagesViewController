@@ -368,8 +368,6 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     if (self.automaticallyScrollsToMostRecentMessage && ![self jsq_isMenuVisible]) {
         [self scrollToBottomAnimated:animated];
     }
-
-    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSBundle jsq_localizedStringForKey:@"new_message_received_accessibility_announcement"]);
 }
 
 - (void)scrollToBottomAnimated:(BOOL)animated
